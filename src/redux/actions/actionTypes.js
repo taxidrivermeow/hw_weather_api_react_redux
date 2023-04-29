@@ -1,0 +1,5 @@
+export const CHANGE_CITY = "CHANGE_CITY";
+export const PUT_WEATHER = "PUT_WEATHER";
+export const REQUEST_WEATHER = "REQUEST_WEATHER";
+export const ERROR_WEATHER = "ERROR_WEATHER";
+export const ERROR_CITY_WEATHER = "ERROR_CITY_WEATHER";

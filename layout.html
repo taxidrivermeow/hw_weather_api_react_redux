@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .wrapper {
+            background-color: #4d337c;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .wrapper-bg-video {
+            position: absolute;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .video:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(77, 51, 124, 0.5);
+        }
+
+        .content {
+            background-color: rgb(77, 51, 124, 0.8);
+            width: 70%;
+            height: 300px;
+            border: 5px solid #efac28;
+            z-index: 5;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .info {
+            border-right: 5px solid #efac28;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /*background-image: url('/src/assets/img/weather-bg.jpg');*/
+            background-size: 100% 100%;
+            font-size: x-large;
+            color: #efac28;
+            text-shadow: 1px 1px 1px #4d337c,
+            -1px -1px 1px #4d337c,
+            -1px 1px 1px #4d337c,
+            1px -1px 1px #4d337c;
+        }
+
+        .data {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form input {
+            width: 300px;
+            height: 30px;
+            font-size: 25px;
+        }
+
+        .form button {
+            height: 35px;
+            font-size: 25px;
+	        color: #efac28;
+            background-color: #4d337c;
+        }
+
+        .weather {
+            background-color: yellow;
+        }
+
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="video">
+		<video class="wrapper-bg-video" src="/src/assets/video/snowfall.mp4" autoplay muted loop></video>
+	</div>
+	<div class="content">
+		<div class="info">
+			<h2>Weather App</h2>
+			<h4>Your city weather</h4>
+		</div>
+		<div class="data">
+			<div class="form">
+				<input type="text" placeholder="Enter city name"/>
+				<button>Get weather</button>
+			</div>
+			<div class="weather"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
