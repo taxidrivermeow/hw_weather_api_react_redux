@@ -1,91 +1,155 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
-  background-color: #4d337c;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    background-color: #4d337c;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .wrapper-bg-video {
-  position: absolute;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    object-fit: cover;
 }
 
 .video:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(77, 51, 124, 0.5);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 51, 124, 0.5);
 }
 
 .content {
-  background-color: rgb(77, 51, 124, 0.8);
-  width: 70%;
-  height: 300px;
-  border: 5px solid #efac28;
-  z-index: 5;
-  display: flex;
-  flex-direction: row;
+    background-color: rgb(77, 51, 124, 0.8);
+    width: 70%;
+    height: 300px;
+    border: 5px solid #efac28;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
 }
 
 .info {
-  border-right: 5px solid #efac28;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /*background-image: url('/src/assets/img/weather-bg.jpg');*/
-  background-size: 100% 100%;
-  font-size: x-large;
-  color: #efac28;
-  text-shadow: 1px 1px 1px #4d337c,
-  -1px -1px 1px #4d337c,
-  -1px 1px 1px #4d337c,
-  1px -1px 1px #4d337c;
+    border-right: 5px solid #efac28;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: 100% 100%;
+    font-size: x-large;
+    color: #efac28;
+    text-shadow: 1px 1px 1px #4d337c,
+    -1px -1px 1px #4d337c,
+    -1px 1px 1px #4d337c,
+    1px -1px 1px #4d337c;
+}
+
+.info * {
+    text-align: center;
 }
 
 .data {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .form input {
-  width: 300px;
-  height: 30px;
-  font-size: 25px;
+    width: 300px;
+    height: 30px;
+    font-size: 25px;
 }
 
 .form button {
-  height: 35px;
-  font-size: 25px;
-  color: #efac28;
-  background-color: #4d337c;
+    height: 35px;
+    font-size: 25px;
+    color: #efac28;
+    background-color: #4d337c;
 }
 
 .weather {
-  background-color: yellow;
+    margin: 30px;
+    color: #fff;
+    font-size: large;
+    text-shadow: 1px 1px 1px #000,
+    -1px -1px 1px #000,
+    -1px 1px 1px #000,
+    1px -1px 1px #000;
+}
+
+@media (max-width: 960px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 799px) {
+    .content {
+        flex-direction: column;
+        height: 80%;
+    }
+
+    .info {
+        width: 100%;
+        border-bottom: 5px solid #efac28;;
+    }
+
+    .data {
+        padding: 0;
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 679px) {
+    .content {
+        flex-direction: column;
+        height: 80%;
+    }
+
+    .info {
+        width: 100%;
+        border-bottom: 5px solid #efac28;;
+    }
+
+    .data {
+        padding: 0;
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 479px) {
+    .form input {
+        margin: 0;
+        padding: 0;
+        width: calc(100% - 5px);
+    }
 }
